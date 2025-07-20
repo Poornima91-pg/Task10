@@ -25,6 +25,23 @@ def test_title_and_url():
     else:
         print("URL of the Homepage is incorrect. test failed.")
 
+    # 1. Get title of the webpage
+    title = driver.title
+    print("Title of the webpage:", title)
+
+    # 2. Get current URL
+    current_url = driver.current_url
+    print("Current URL:", current_url)
+
+    # 3. Save entire page content to text file
+    Page_contents = driver.find_element(By.XPATH, "//html/body").text
+    with open("Webpage_task_11.txt", "w", encoding='utf-8') as file:
+        file.write(Page_contents)
+
+    # 4. Save full page source to a file
+    with open("Webpage_task_1.txt", "w", encoding='utf-8') as file:
+        file.write(driver.page_source)
+
 # Positive testcase with correct login details
 def test_postive_login_valid():
     driver.get("https://www.saucedemo.com/")
