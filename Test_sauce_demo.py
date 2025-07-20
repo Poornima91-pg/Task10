@@ -32,7 +32,7 @@ def test_postive_login_valid():
     driver.find_element(By.ID, "password").send_keys("secret_sauce")
     driver.find_element(By.ID, "login-button").click()
     time.sleep(2)
-    assert "inventory" in driver.current_url
+    assert "https://www.saucedemo.com/inventory.html" in driver.current_url,"inventory is not in url"
     print("Login Successfull")
 
 # Negative testcase with incorrect password
